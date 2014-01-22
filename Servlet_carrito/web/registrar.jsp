@@ -15,7 +15,8 @@
         <div>Introduce los datos de usuario</div>
         <form action="Servlet_registro" name="form" method="POST">
             <span>Nombre</span><input type="text" name="nombre" /><br>
-            <span>Clave</span><input type="password" name="clave" />
+            <span>Clave</span><input type="password" name="clave" /><br>
+            <span>Edad</span><input type="text" name="edad" />
             <button>Enviar</button>
         </form>
     </body>

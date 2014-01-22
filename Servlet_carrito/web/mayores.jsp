@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 16-ene-2014, 12:55:01
+    Document   : mayores
+    Created on : 22-ene-2014, 14:00:13
     Author     : postal
 --%>
 
@@ -12,9 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@ include file="cabecera.html" %>
-        <a href="acceder.jsp">Acceder</a><br>
-        <a href="registrar.jsp">Registrarse</a>
-        <%@ include file="pie.html" %>
+        <h1>Hello World!</h1>
     </body>
 </html>

@@ -18,6 +18,7 @@
         <form action="Servlet_entrada" name="form" method="POST">
             <input type="text" name="nombre" /><br>
             <input type="password" name="clave" />
+            <jsp:forward page="date.jsp" />
             <button>Enviar</button>
         </form>
     </body>
