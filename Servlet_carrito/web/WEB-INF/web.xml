@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>Servlet_entrada</servlet-name>
+        <servlet-class>Servlet.Servlet_entrada</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet_finalizar</servlet-name>
+        <servlet-class>Servlet.Servlet_finalizar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet_tienda</servlet-name>
+        <servlet-class>Servlet.Servlet_tienda</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet_error</servlet-name>
+        <servlet-class>Servlet.Servlet_error</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Servlet_registro</servlet-name>
+        <servlet-class>Servlet.Servlet_registro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet_entrada</servlet-name>
+        <url-pattern>/Servlet_entrada</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_finalizar</servlet-name>
+        <url-pattern>/Servlet_finalizar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_tienda</servlet-name>
+        <url-pattern>/Servlet_tienda</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_error</servlet-name>
+        <url-pattern>/Servlet_error</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Servlet_registro</servlet-name>
+        <url-pattern>/Servlet_registro</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>
