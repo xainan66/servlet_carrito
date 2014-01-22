@@ -16,9 +16,8 @@
             out.println("Escribe tu nombre y clave");
         %>
         <form action="Servlet_entrada" name="form" method="POST">
-            <input type="text" name="nombre" /><br>
-            <input type="password" name="clave" />
-            <jsp:forward page="date.jsp" />
+            <span>Nombre </span><input type="text" name="nombre" /><br>
+            <span>Clave </span><input type="password" name="clave" />
             <button>Enviar</button>
         </form>
     </body>
