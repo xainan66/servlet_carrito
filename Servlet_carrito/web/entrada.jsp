@@ -6,7 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="usuario" scope="request" class="modelo.Usuario" />
-<jsp:getProperty name="usuario" property="*" />
+<jsp:setProperty name="usuario" property="nombre" value='<% request.getParameter("nombre") %>' />
+<jsp:setProperty name="usuario" property="clave" value='<% request.getParameter("clave") %>' />
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,10 +18,10 @@
         <%
             if((usuario.getNombre().equals("pepe")) && (usuario.getClave().equals("1234"))) { 
                 %>
-                <span>Hola</span><%= usuario.getNombre() %>;
+                <jsp:forward page="entrada2" />
         <%    } else {
                 %>
-                <span>Usuario o contraseña incorrectos</span>
+                <h2>Usuario o contraseña incorrectos</h2>
             <%}
         %>
         <%= usuario.getClave() %>
