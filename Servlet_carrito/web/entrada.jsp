@@ -16,11 +16,13 @@
     <body>
         <%
             if((usuario.getNombre().equals("pepe")) && (usuario.getClave().equals("1234"))) { 
-                out.println("Bienvenido "+usuario.getNombre());
-            } else {
-                out.println("Usuario o contraseña incorrectos");
-            }
-        }%>
+                %>
+                <span>Hola</span><%= usuario.getNombre() %>;
+        <%    } else {
+                %>
+                <span>Usuario o contraseña incorrectos</span>
+            <%}
+        %>
         <%= usuario.getClave() %>
     </body>
 </html>
