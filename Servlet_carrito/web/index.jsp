@@ -12,9 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@ include file="cabecera.html" %>
+        <%@ include file="plantillas/cabecera.html" %>
         <a href="acceder.jsp">Acceder</a><br>
         <a href="registrar.jsp">Registrarse</a>
-        <%@ include file="pie.html" %>
+        <%@ include file="plantillas/pie.html" %>
     </body>
 </html>
