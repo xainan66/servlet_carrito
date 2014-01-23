@@ -1,6 +1,6 @@
 <%-- 
-    Document   : mayores
-    Created on : 22-ene-2014, 14:00:13
+    Document   : registroFinal
+    Created on : 23-ene-2014, 9:12:44
     Author     : postal
 --%>
 
@@ -12,8 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form name="registroMayores" action="registroFinal">
-            
-        </form>
+        <h1>Hello World!</h1>
     </body>
 </html>

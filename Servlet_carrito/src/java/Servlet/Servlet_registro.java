@@ -35,7 +35,6 @@ public class Servlet_registro extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            long guardado;
             String nombre = request.getParameter("nombre");
             String clave = request.getParameter("clave");
             Usuario usuario = new Usuario(nombre, clave);
