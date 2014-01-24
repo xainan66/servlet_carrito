@@ -8,6 +8,7 @@
 <%@ page import="modelo.Producto" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<jsp:useBean id="usuario" scope="session" class="modelo.Usuario" />
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +16,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-
+        <%  //String nombre = session.getAttribute("nombre").toString();
+            List<Producto> carrito = (ArrayList)session.getAttribute("carrito");
+            double total = 0.0;
+            %>
+        <h3>Gracias <%= usuario.getNombre() %> por comprar:</h3>
+        <ul>
+        <%  for(int i=0;i<carrito.size();i++) { %>
+                <li><%= carrito.get(i).getNombre() %></li>
+                <% total += carrito.get(i).getPrecio(); %>
+           <% } %>
+        </ul>
+        <div>Importe: <%= total %></div>
     </body>
 </html>

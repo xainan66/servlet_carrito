@@ -34,7 +34,7 @@
                 String prod = request.getParameter("idProducto");
                 Session hbSession = HibernateUtil.getSFactory().openSession();
                 hbSession.beginTransaction();
-                Query query = hbSession.createQuery("from Producto where nombre = '"+prod+"' ");
+                Query query = hbSession.createQuery("from Producto where id = "+prod);
                 List<Producto> lista = query.list();
                 hbSession.beginTransaction().commit();
                 Producto producto = lista.get(0);
