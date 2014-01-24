@@ -23,14 +23,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <sql:setDataSource var="snapshot" driver="org.apache.derby.jdbc.ClientDriver"
-     url="jdbc:derby://localhost:1527/servlet_carrito"
-     user="postal"  password="postal"/>
-
-    <sql:query dataSource="${snapshot}" var="result">
-        SELECT * from Productos
-    </sql:query>
-        <%  List<Producto> carrito;
+        <%  session = request.getSession(true);
+            List<Producto> carrito;
             if(session.getAttribute("carrito")!=null) {
                 carrito = (List)session.getAttribute("carrito");
             } else {
@@ -49,22 +43,33 @@
                 Producto producto = lista.get(0);
                 carrito.add(producto);
             }%>
+            <%  session.setAttribute("carrito", carrito);
+                Session hbSession = HibernateUtil.getSFactory().openSession();
+                hbSession.beginTransaction();            
+                Query query = hbSession.createQuery("from Producto");
+                List<Producto> lista = query.list();
+                hbSession.beginTransaction().commit();
+                hbSession.close(); %>
+                
         <form name="form_productos" action="tienda.jsp">
             <table border="1" width="100%">
                 <tr>
                    <th>Nombre</th>
                    <th>Precio</th>
                 </tr>
-                <c:forEach var="row" items="${result.rows}">
+                <% Producto producto;
+                    for(int i=0;i<lista.size();i++) {
+                    producto = lista.get(i);
+                    %>
                 <tr style="display:none">
-                    <td><input type="hidden" name="id" value="${row.id}" /></td>
+                    <td><input type="hidden" name="id" value="<%= producto.getId() %>" id="idProducto" /></td>
                 </tr>
                 <tr>
-                   <td><c:out value="${row.nombre}"/></td>
-                   <td><c:out value="${row.precio}"/></td>
+                   <td><%= producto.getNombre() %></td>
+                   <td><%= producto.getPrecio() %></td>
                    <td width="50"><input type="submit" value="Agregar" name="agregar" /></td>
                 </tr>
-                </c:forEach>
+                <% } %>
             </table>
         </form>
         <form name="form_compra" action="compra.jsp">
