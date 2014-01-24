@@ -13,7 +13,7 @@
     </head>
     <body>
         <h3>Escribe tu nombre y clave</h3>
-        <form action="entrada.jsp" name="form" method="POST">
+        <form action="Servlet_entrada" name="form" method="POST">
             <span>Nombre </span><input type="text" name="nombre" /><br>
             <span>Clave </span><input type="password" name="clave" />
             <button>Enviar</button>

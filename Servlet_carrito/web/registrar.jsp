@@ -13,7 +13,7 @@
     </head>
     <body>
         <div>Introduce los datos de usuario</div>
-        <form action="preRegistro.jsp" name="form" method="POST">
+        <form action="Servlet_registro" name="form" method="POST">
             <span>Nombre</span><input type="text" name="nombre" /><br>
             <span>Clave</span><input type="password" name="clave" /><br>
             <span>Edad</span><input type="text" name="edad" />
