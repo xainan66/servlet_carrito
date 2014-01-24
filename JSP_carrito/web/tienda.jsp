@@ -15,7 +15,6 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-<%@ include file="js/javascript.js" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,10 +30,8 @@
                 carrito = new ArrayList();
             }
         %>
-        <%  if(request.getParameter("productos")!=null) {
-                String[] seleccionado;
-                seleccionado = request.getParameterValues("productos");
-                String prod = seleccionado[0];
+        <%  if(request.getParameter("idProducto")!=null) {
+                String prod = request.getParameter("idProducto");
                 Session hbSession = HibernateUtil.getSFactory().openSession();
                 hbSession.beginTransaction();
                 Query query = hbSession.createQuery("from Producto where nombre = '"+prod+"' ");
@@ -57,19 +54,19 @@
                    <th>Nombre</th>
                    <th>Precio</th>
                 </tr>
-                <% Producto producto;
+                
+                <%  Producto producto;
                     for(int i=0;i<lista.size();i++) {
                     producto = lista.get(i);
                     %>
-                <tr style="display:none">
-                    <td><input type="hidden" name="id" value="<%= producto.getId() %>" id="idProducto" /></td>
-                </tr>
                 <tr>
+                   <td style="display:none"><input type="hidden" name="idProducto" value="<%= producto.getId() %>" /></td>
                    <td><%= producto.getNombre() %></td>
                    <td><%= producto.getPrecio() %></td>
                    <td width="50"><input type="submit" value="Agregar" name="agregar" /></td>
                 </tr>
                 <% } %>
+                
             </table>
         </form>
         <form name="form_compra" action="compra.jsp">
