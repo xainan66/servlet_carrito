@@ -15,7 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% if((usuario.getNombre().toString().equals("pepe")) && (usuario.getClave().equals("1234"))) { %>
+        <% if((usuario.getNombre().equals("pepe")) && (usuario.getClave().equals("1234"))) { %>
         <jsp:forward page="tienda.jsp" />
         <% } else { %>
         <h3>Error: no existe el usuario o contraseña</h3>
