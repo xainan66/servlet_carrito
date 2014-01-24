@@ -23,19 +23,23 @@
     <sql:query dataSource="${snapshot}" var="result">
         SELECT * from Productos
     </sql:query>
-        <table border="1" width="100%">
-            <tr>
-               <th>Nombre</th>
-               <th>Precio</th>
-            </tr>
-            <c:forEach var="row" items="${result.rows}">
-            <tr>
-               <td><c:out value="${row.nombre}"/></td>
-               <td><c:out value="${row.precio}"/></td>
-               <td width="50"><input type="submit" value="Agregar" name="agregar" /></td>
-            </tr>
-            </c:forEach>
-        </table>
-        <input type="submit" value="Finalizar compra" name="finalizar_compra" />
+        <form name="form_productos" action="tienda.jsp">
+            <table border="1" width="100%">
+                <tr>
+                   <th>Nombre</th>
+                   <th>Precio</th>
+                </tr>
+                <c:forEach var="row" items="${result.rows}">
+                <tr>
+                   <td><c:out value="${row.nombre}"/></td>
+                   <td><c:out value="${row.precio}"/></td>
+                   <td width="50"><input type="submit" value="Agregar" name="agregar" /></td>
+                </tr>
+                </c:forEach>
+            </table>
+        </form>
+        <form name="form_compra" action="compra.jsp">
+            <input type="submit" value="Finalizar compra" name="finalizar_compra" />
+        </form>
     </body>
 </html>
