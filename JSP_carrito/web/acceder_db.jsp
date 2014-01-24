@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="usuario" scope="session" class="modelo.Usuario" />
 <jsp:setProperty name="usuario" property="*" />
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +14,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:getProperty name="usuario" property="nombre" />
         <% if((usuario.getNombre().equals("pepe")) && (usuario.getClave().equals("1234"))) { %>
         <jsp:forward page="tienda.jsp" />
         <% } else { %>
